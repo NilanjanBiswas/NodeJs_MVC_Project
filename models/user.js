@@ -36,19 +36,19 @@ module.exports =
 		});
 	},
 
-	// insert: function(user, callback){
-	// 	var sql = "insert into  values('', '"+user.uname+"', '"+user.password+"', '"+user.type+"')";
+	insert: function(user, callback){
+		var sql = "insert into  login values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"')";
 
-	// 	console.log(sql);
+		console.log(sql);
 
-	// 	db.execute(sql, function(status){
-	// 		if(status){
-	// 			callback(true);
-	// 		}else{
-	// 			callback(false);
-	// 		}
-	// 	});
-	// },
+		db.execute(sql, function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
 
 	// update: function(user, callback){
 	// 	var sql = "";

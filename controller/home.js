@@ -12,6 +12,8 @@ router.get('/', function(req, res){
 });
 
 
+
+
 router.get('/view_users', function(req, res){
 	
 	if(req.session.username != null){
