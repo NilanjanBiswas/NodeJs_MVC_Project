@@ -26,7 +26,7 @@ module.exports =
 	},
 
 	validate: function(user, callback){
-		var sql = "select * from login where username='"+user.uname+"' and password='"+user.password+"'";
+		var sql = "select * from login where username='"+user.username+"' and password='"+user.password+"'";
 		db.getResults(sql, function(result){
 			if(result.length > 0){
 				callback(true);
@@ -50,25 +50,25 @@ module.exports =
 		});
 	},
 
-	// update: function(user, callback){
-	// 	var sql = "";
-	// 	db.execute(sql, function(status){
-	// 		if(status){
-	// 			callback(true);
-	// 		}else{
-	// 			callback(false);
-	// 		}
-	// 	});
-	// },
+	update: function(user, callback){
+		var sql = "update login set values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"') where id="+id;
+		db.execute(sql, function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
 
-	// delete: function(id, callback){
-	// 	var sql = "delete from user where id="+id;
-	// 	db.execute(sql, function(status){
-	// 		if(status){
-	// 			callback(true);
-	// 		}else{
-	// 			callback(false);
-	// 		}
-	// 	});
-	// }
+	delete: function(id, callback){
+		var sql = "delete from login where id="+id;
+		db.execute(sql, function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	}
 }

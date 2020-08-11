@@ -10,13 +10,13 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
 
 	var user = {
-		uname: req.body.uname,
+		username: req.body.username,
 		password: req.body.password
 	};
 
 	userModel.validate(user, function(status){
 		if(status){
-			req.session.username = user.uname;
+			req.session.username = user.username;
 			res.redirect('/home');
 		}else{
 			res.send('invalid username/password');

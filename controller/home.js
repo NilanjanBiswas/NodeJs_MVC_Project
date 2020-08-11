@@ -15,10 +15,10 @@ router.get('/', function(req, res){
 
 
 router.get('/view_users', function(req, res){
-	
+
 	if(req.session.username != null){
 		userModel.getAll(function(results){
-			res.render('home/userlist', { userList : results, uname: req.session.username});
+			res.render('home/userlist', { userList : results, username: req.session.username});
 		});
 	}else{
 		res.redirect('/login');
@@ -35,12 +35,13 @@ router.get('/create', function(req, res){
 });
 
 router.post('/create', function(req, res){
-	
+
 	if(req.session.username != null){
 
 		var user ={
-			uname 		: req.body.uname,
+			username		: req.body.username,
 			password	: req.body.password,
+			email  	: req.body.email,
 			type		: req.body.type
 		}
 
@@ -58,11 +59,11 @@ router.post('/create', function(req, res){
 
 
 router.get('/delete/:id', function(req, res){
-	
+
 	userModel.get(req.params.id, function(result){
 		res.render('home/delete', {user: result});
 	});
-	
+
 });
 
 router.post('/delete/:id', function(req, res){
