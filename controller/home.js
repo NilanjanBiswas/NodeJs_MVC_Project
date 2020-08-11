@@ -58,6 +58,7 @@ router.post('/create', function(req, res){
 });
 
 
+
 router.get('/delete/:id', function(req, res){
 
 	userModel.get(req.params.id, function(result){
