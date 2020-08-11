@@ -4,7 +4,8 @@ var bodyParser 	= require('body-parser');
 var login 		= require('./controller/login');
 var home 		= require('./controller/home');
 var logout 		= require('./controller/logout');
-var user_registration 	= require('./controller/user_registration');
+//var user_registration 	= require('./controller/user_registration');
+var user		= require('./controller/userController');
 var app 		= express();
 
 //config
@@ -17,10 +18,11 @@ app.use('/abc', express.static('assets'));
 //middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: false}));
+app.use('/user', user);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/home', home);
-app.use('/user_registration',user_registration);
+//app.use('/user_registration',user_registration);
 
 /*app.get('/admin/user/:abc/:name', function(req, res){
 	res.send(req.params.abc+" | "+req.params.name);
