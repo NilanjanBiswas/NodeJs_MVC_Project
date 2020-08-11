@@ -57,7 +57,12 @@ router.post('/create', function(req, res){
 	}
 });
 
-
+router.get('/update/:id', function(req, res){
+res.render('home/update', {user: result});
+	userModel.get(req.params.id, function(result){
+		res.render('home/update', {user: result});
+	 });
+	 });
 router.get('/delete/:id', function(req, res){
 
 	userModel.get(req.params.id, function(result){
