@@ -30,7 +30,7 @@ router.post('/signup', function(req, res) {
 router.get('/view_users', function(req, res) {
 
     userModel.getAll(function(results) {
-        res.render('home/userlist', { userList: results, uname: req.session.username });
+        res.render('home/userlist', { userList: results, username: req.session.username });
     });
 });
 
