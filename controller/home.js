@@ -57,8 +57,18 @@ router.post('/create', function(req, res) {
     }
 });
 
+<<<<<<< HEAD
 
 // router.get('/delete/:id', function(req, res){
+=======
+router.get('/update/:id', function(req, res){
+res.render('home/update', {user: result});
+	userModel.get(req.params.id, function(result){
+		res.render('home/update', {user: result});
+	 });
+	 });
+router.get('/delete/:id', function(req, res){
+>>>>>>> 12a448bbcb0e0657f974d0fd9571b74cd2fdbf80
 
 // 	userModel.get(req.params.id, function(result){
 // 		res.render('home/delete', {user: result});
