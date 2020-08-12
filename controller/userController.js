@@ -43,17 +43,17 @@ router.get('/create', function(req, res) {
 router.post('/create', function(req, res) {
 
     var user = {
-        username: req.body.uname,
-        password: req.body.password,
-        email: req.body.email,
-        type: req.body.type
+        username : req.body.username,
+        password : req.body.password,
+        email    : req.body.email,
+        type     : req.body.type
     }
 
     userModel.insert(user, function(status) {
         if (status) {
-            res.redirect('/home/view_users');
+            res.redirect('/user/view_users');
         } else {
-            res.redirect('/home/create');
+            res.redirect('/user/create');
         }
     });
 });
