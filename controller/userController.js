@@ -17,65 +17,65 @@ router.post('/signup', function(req, res){
 		type		: req.body.type
 	}
 
-// 	userModel.insert(user, function(status){
-// 		if(status){
-// 			res.redirect('/login');
-// 		}else{
-// 			res.redirect('/signup');
-// 		}
-// 	});
-// });
-//
-//
-// router.get('/view_users', function(req, res){
-//
-// 	userModel.getAll(function(results){
-// 		res.render('home/userlist', { userList : results, uname: req.session.username});
-// 	});
-// });
-//
-//
-// router.get('/create', function(req, res){
-// 	res.render('home/add');
-// });
-//
-//
-// router.post('/create', function(req, res){
-//
-// 	var user ={
-// 		username 		: req.body.uname,
-// 		password	: req.body.password,
-// 		email	: req.body.email,
-// 		type		: req.body.type
-// 	}
-//
-// 	userModel.insert(user, function(status){
-// 		if(status){
-// 			res.redirect('/home/view_users');
-// 		}else{
-// 			res.redirect('/home/create');
-// 		}
-// 	});
-// });
-//
-//
-// router.get('/delete/:id', function(req, res){
-//
-// 	userModel.get(req.params.id, function(result){
-// 		res.render('home/delete', {user: result});
-// 	});
-//
-// });
-//
-// router.post('/delete/:id', function(req, res){
-//
-// 	userModel.delete(req.body.id, function(status){
-// 		if(status){
-// 			res.redirect('/home/view_users');
-// 		}else{
-// 			res.redirect('/home');
-// 		}
-// 	});
+	userModel.insert(user, function(status){
+		if(status){
+			res.redirect('/login');
+		}else{
+			res.redirect('/signup');
+		}
+	});
+});
+
+
+router.get('/view_users', function(req, res){
+
+	userModel.getAll(function(results){
+		res.render('home/userlist', { userList : results, uname: req.session.username});
+	});
+});
+
+
+router.get('/create', function(req, res){
+	res.render('home/add');
+});
+
+
+router.post('/create', function(req, res){
+
+	var user ={
+		username 		: req.body.uname,
+		password	: req.body.password,
+		email	: req.body.email,
+		type		: req.body.type
+	}
+
+	userModel.insert(user, function(status){
+		if(status){
+			res.redirect('/home/view_users');
+		}else{
+			res.redirect('/home/create');
+		}
+	});
+});
+
+
+router.get('/delete/:id', function(req, res){
+
+	userModel.get(req.params.id, function(result){
+		res.render('home/delete', {user: result});
+	});
+
+});
+
+router.post('/delete/:id', function(req, res){
+
+	userModel.delete(req.body.id, function(status){
+		if(status){
+			res.redirect('/home/view_users');
+		}else{
+			res.redirect('/home');
+		}
+	});
  });
 
 
