@@ -37,10 +37,7 @@ module.exports =
 	},
 
 	insert: function(user, callback){
-		var sql = "insert into  login values('', '"+user.username+"',
-		 '"+user.password+"',
-		'"+user.email+"',
-		 '"+user.type+"')";
+		var sql = "insert into  login values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"')";
 
 		console.log(sql);
 
@@ -54,8 +51,8 @@ module.exports =
 	},
 
 	update: function(user, callback){
-		var sql = "update login set username=?, password=?,email=? type=? where id=?";
-		db.execute(sql, [user.username, user.password,user.email, user.type, user.id], function(status){
+		var sql = "update login set values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"') where id="+id;
+		db.execute(sql, function(status){
 			if(status){
 				callback(true);
 			}else{
