@@ -96,7 +96,7 @@ router.post('/delete/:id', function(req, res) {
 
     userModel.delete(req.body.id, function(status) {
         if (status) {
-            res.redirect('/home/view_users');
+            res.redirect('/user/view_users');
         } else {
             res.redirect('/home');
         }
