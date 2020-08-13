@@ -20,7 +20,7 @@ body
 form{
 	width: 300px;
 	text-align: center;
-	
+
 }
 
 input
@@ -38,7 +38,7 @@ input
 	outline: none;
 	color:#fff;
 }
-input[type=button]
+input[type=submit]
 {
 	border: none;
 	width:190px;
@@ -49,15 +49,15 @@ input[type=button]
 	padding: 10px 0;
 	border-radius: 15px;
 	cursor:pointer;
-	
-	
+
+
 }
 
-input[type=button]:hover
+input[type=submit]:hover
 {
 	color: #fff;
 	background-color: black;
-	
+
 }
 h2
 {
@@ -69,14 +69,3 @@ h2
 	color:aliceblue;
 	opacity: :0.8;
 }
-
-
-
-
-
-
-
-
-
-
-
