@@ -4,7 +4,6 @@ var bodyParser 	= require('body-parser');
 var login 		= require('./controller/login');
 var home 		= require('./controller/home');
 var logout 		= require('./controller/logout');
-//var user_registration 	= require('./controller/user_registration');
 var user		= require('./controller/userController');
 var app 		= express();
 

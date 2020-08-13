@@ -4,8 +4,8 @@ module.exports =
 {
 
 	get: function(id, callback){
-		var sql = "select * from login where id="+id;
-		db.getResults(sql, function(result){
+		var sql = "select * from login where id=?";
+		db.getResults(sql,[id], function(result){
 			if(result.length > 0){
 				callback(result[0]);
 			}else{
@@ -16,7 +16,7 @@ module.exports =
 
 	getAll: function(callback){
 		var sql = "select * from login";
-		db.getResults(sql, function(result){
+		db.getResults(sql, null,function(result){
 			if(result.length > 0){
 				callback(result);
 			}else{
@@ -26,8 +26,8 @@ module.exports =
 	},
 
 	validate: function(user, callback){
-		var sql = "select * from login where username='"+user.username+"' and password='"+user.password+"'";
-		db.getResults(sql, function(result){
+		var sql = "select * from login where username=? and password=?";
+		db.getResults(sql, [user.username, user.password], function(result){
 			if(result.length > 0){
 				callback(true);
 			}else{
@@ -35,13 +35,10 @@ module.exports =
 			}
 		});
 	},
-
 	insert: function(user, callback){
-		var sql = "insert into  login values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"')";
+		var sql = "insert into login values(?,?, ?, ?, ?)";
 
-		console.log(sql);
-
-		db.execute(sql, function(status){
+		db.execute(sql, ['', user.username, user.password,user.email, user.type], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -51,8 +48,8 @@ module.exports =
 	},
 
 	update: function(user, callback){
-		var sql = "update login set values('', '"+user.username+"', '"+user.password+"','"+user.email+"', '"+user.type+"') where id="+id;
-		db.execute(sql, function(status){
+		var sql = "update login set username=?, password=?,email=?, type=? where id=?";
+		db.execute(sql, [user.username, user.password,user.email, user.type, user.id], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -62,8 +59,8 @@ module.exports =
 	},
 
 	delete: function(id, callback){
-		var sql = "delete from login where id="+id;
-		db.execute(sql, function(status){
+		var sql = "delete from login where id=?";
+		db.execute(sql, [id], function(status){
 			if(status){
 				callback(true);
 			}else{
