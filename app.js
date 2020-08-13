@@ -27,8 +27,14 @@ app.use('/home', home);
 	res.send(req.params.abc+" | "+req.params.name);
 });*/
 
-app.get('/', function(req, res){
-	res.send("this is index page!<br> <a href='/login'> login</a> ");
+// app.get('/', function(req, res){
+//
+// 		res.render('/index');
+//
+// });
+app.get('/', (req, res)=>{
+	res.render('index');
+
 });
 
 app.listen(3000, function(){
