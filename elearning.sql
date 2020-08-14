@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2020 at 09:45 PM
+-- Generation Time: Aug 15, 2020 at 12:30 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -41,7 +41,105 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`, `type`) VALUES
 (1, 'admin', 'admin', 'admin@gmail.com', 'admin'),
-(2, 'undefined', '', 'undefined', '');
+(3, 'test', 'test', 'test', 'test'),
+(15, 'student', 'student', 'ss', 'student'),
+(16, 'updated', 'q', 'q', 'q'),
+(17, 'tutor', 'tutor', 't@gmail.com', 'tutor'),
+(19, 'dp', 'd', 'd', 'd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `packages`
+--
+
+CREATE TABLE `packages` (
+  `id` int(100) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `ammount` int(20) NOT NULL,
+  `course` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `packages`
+--
+
+INSERT INTO `packages` (`id`, `type`, `ammount`, `course`) VALUES
+(1, 'trail', 0, 'any'),
+(2, 'general', 1000, 'any'),
+(3, 'premium', 3000, 'any');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `login_id` int(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `class` varchar(20) NOT NULL,
+  `package_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`login_id`, `name`, `class`, `package_id`) VALUES
+(15, 'neel', 'english', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tutor`
+--
+
+CREATE TABLE `tutor` (
+  `id` int(100) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `subject` varchar(20) NOT NULL,
+  `activestatus` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tutor`
+--
+
+INSERT INTO `tutor` (`id`, `name`, `subject`, `activestatus`) VALUES
+(17, 'morshed', 'math', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tutorreview`
+--
+
+CREATE TABLE `tutorreview` (
+  `id` int(100) NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `tutor_id` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tutorreview`
+--
+
+INSERT INTO `tutorreview` (`id`, `comment`, `rating`, `tutor_id`) VALUES
+(17, 'halar put halai onk valo', 5, 17);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tutorstudentlist`
+--
+
+CREATE TABLE `tutorstudentlist` (
+  `id` int(100) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -54,6 +152,40 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `packages`
+--
+ALTER TABLE `packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD KEY `login_id` (`login_id`),
+  ADD KEY `student_ibfk_1` (`package_id`);
+
+--
+-- Indexes for table `tutor`
+--
+ALTER TABLE `tutor`
+  ADD KEY `tutor_ibfk_1` (`id`);
+
+--
+-- Indexes for table `tutorreview`
+--
+ALTER TABLE `tutorreview`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tutor_id` (`tutor_id`);
+
+--
+-- Indexes for table `tutorstudentlist`
+--
+ALTER TABLE `tutorstudentlist`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `student_id` (`student_id`),
+  ADD KEY `tutorstudentlist_ibfk_1` (`teacher_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -61,7 +193,47 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `packages`
+--
+ALTER TABLE `packages`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tutorreview`
+--
+ALTER TABLE `tutorreview`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `tutorstudentlist`
+--
+ALTER TABLE `tutorstudentlist`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `packages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tutorreview`
+--
+ALTER TABLE `tutorreview`
+  ADD CONSTRAINT `tutorreview_ibfk_1` FOREIGN KEY (`tutor_id`) REFERENCES `tutor` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `tutorstudentlist`
+--
+ALTER TABLE `tutorstudentlist`
+  ADD CONSTRAINT `tutorstudentlist_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `tutor` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
