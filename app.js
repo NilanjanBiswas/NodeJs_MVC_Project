@@ -5,6 +5,8 @@ var login 		= require('./controller/login');
 var home 		= require('./controller/home');
 var logout 		= require('./controller/logout');
 var user		= require('./controller/userController');
+var tutor       =require('./controller/tutor');
+var student       =require('./controller/student');
 var app 		= express();
 
 //config
@@ -18,6 +20,8 @@ app.use('/abc', express.static('assets'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: false}));
 app.use('/user', user);
+app.use ('/tutor',tutor);
+app.use ('/student',student);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/home', home);

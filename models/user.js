@@ -13,6 +13,16 @@ module.exports =
 			}
 		});
 	},
+	  getUserByUsername: function(username, callback){
+		var sql = "select * from login where username=?";
+		db.getResults(sql,[username], function(result){
+			if(result.length > 0){
+				callback(result);
+			}else{
+				callback([]);
+			}
+		});
+	},
 
 	getAll: function(callback){
 		var sql = "select * from login";

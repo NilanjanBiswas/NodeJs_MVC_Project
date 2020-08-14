@@ -11,18 +11,40 @@ router.post('/', function(req, res){
 
 	var user = {
 		username: req.body.username,
-		password: req.body.password
-	
-
+		password: req.body.password,
+		
 	};
 
 	userModel.validate(user, function(status){
 		if(status){
+			userModel.getUserByUsername(req.body.username,function(results)
+			{
+				req.session.username = user.username;
 
-			req.session.username = user.username;
-			req.session.type=user.type;
-			res.redirect('/home');
-		}else{
+				if (results[0].type=="admin")
+				{
+					
+					res.redirect('/home');
+				}
+				else if (results[0].type=="student")
+				{
+					//console.log('student controller');
+					res.redirect('/student');
+
+				}
+				else if (results[0].type=="tutor")
+				{
+						res.redirect('/tutor');
+					
+
+				}
+				else{
+					res.send('user type not found!!');
+
+				}
+			});
+		}
+		else{
 			res.send('invalid username/password');
 		}
 	});
