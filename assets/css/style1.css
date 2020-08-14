@@ -111,8 +111,8 @@ html{
     overflow-x: hidden;
     overflow-y: hidden;
 
-     opacity: 0;
-    visibility: hidden;
+     /* opacity: 0;
+    visibility: hidden; */
 
 
     transform: translateY(-100px);
@@ -387,5 +387,7 @@ video#herovideo{
 
 
 
-
+h1{
+    text-align: center;
+}
 
