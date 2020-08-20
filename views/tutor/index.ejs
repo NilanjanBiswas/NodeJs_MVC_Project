@@ -23,14 +23,17 @@
 		 <h1>Welcome Tutor! <%= username %></h1>
          <nav class="nav2">
              <ul>
+<!-- // Tutor home page -->
+               <li><a href="/tutor/profile/<%= username %>"><span>01.</span>My profile </a></li>
+               <li><a href="/tutor/update/<%= username %>"><span>02.</span>Update profile </a></li>
+               <li><a href="/tutor/view_students"><span>03.</span>My students</a></li>
 
-                 <li><a href="/"><span>01.</span>Home</a></li>
-                 <li><a href="/user/view_users"><span>02.</span>All User</a></li>
-                 <li><a href="/user/create"><span>03.</span>Create User</a></li>
-                 <li><a href=""><span>04.</span>Team</a></li>
-                 <li><a href=""><span>06.</span>User</a></li>
-                 <li><a href=""><span>07.</span>Blog</a></li>
-                 <li><a href="/logout"><span>08.</span>Logout</a></li>
+               <li><a href="/tutor/create/<%= username %>"><span>04.</span>Join as a paid tutor</a></li>
+               <li><a href="/tutor/contact/<%= username %>"><span>05.</span>Contact us</a></li>
+               <li><a href=""><span>06.</span>Online class  </a></li>
+               <li><a href="/tutor/writeblog"><span>07.</span>Write Blog</a></li>
+               <li><a href="/tutor/readblog"><span>08.</span>Read Blog</a></li>
+               <li><a href="/logout"><span>09.</span>Logout</a></li>
              </ul>
 
 

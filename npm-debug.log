@@ -1,0 +1,101 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'express-lileupload',
+1 verbose cli   '--save' ]
+2 info using npm@2.15.11
+3 info using node@v4.8.4
+4 verbose install initial load of G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\package.json
+5 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\body-parser\package.json
+6 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\bootstrap\package.json
+7 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\ejs\package.json
+8 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\express\package.json
+9 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\express-session\package.json
+10 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\jquery\package.json
+11 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\mysql\package.json
+12 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\package-json\package.json
+13 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\popper.js\package.json
+14 verbose installManyTop reading scoped package data from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\node_modules\session\package.json
+15 info package.json session@0.1.0 No license field.
+16 verbose readDependencies loading dependencies from G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid\package.json
+17 silly cache add args [ 'express-lileupload', null ]
+18 verbose cache add spec express-lileupload
+19 silly cache add parsed spec Result {
+19 silly cache add   raw: 'express-lileupload',
+19 silly cache add   scope: null,
+19 silly cache add   name: 'express-lileupload',
+19 silly cache add   rawSpec: '',
+19 silly cache add   spec: 'latest',
+19 silly cache add   type: 'tag' }
+20 silly addNamed express-lileupload@latest
+21 verbose addNamed "latest" is being treated as a dist-tag for express-lileupload
+22 info addNameTag [ 'express-lileupload', 'latest' ]
+23 silly mapToRegistry name express-lileupload
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'express-lileupload',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'express-lileupload',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/express-lileupload
+28 verbose addNameTag registry:https://registry.npmjs.org/express-lileupload not in flight; fetching
+29 verbose request uri https://registry.npmjs.org/express-lileupload
+30 verbose request no auth needed
+31 info attempt registry request try #1 at 1:16:57 PM
+32 verbose request id dd8b112ba95fc630
+33 http request GET https://registry.npmjs.org/express-lileupload
+34 http 404 https://registry.npmjs.org/express-lileupload
+35 verbose headers { date: 'Mon, 17 Aug 2020 07:16:58 GMT',
+35 verbose headers   'content-type': 'application/json',
+35 verbose headers   'content-length': '21',
+35 verbose headers   connection: 'keep-alive',
+35 verbose headers   'set-cookie': [ '__cfduid=d3f53a4d027e68312ca5023e1f2634b4e1597648617; expires=Wed, 16-Sep-20 07:16:57 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+35 verbose headers   'cf-ray': '5c419cd3cb38e9a7-CGP',
+35 verbose headers   vary: 'Accept-Encoding',
+35 verbose headers   'cf-cache-status': 'EXPIRED',
+35 verbose headers   'cf-request-id': '049ce0585e0000e9a73432d200000001',
+35 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+35 verbose headers   server: 'cloudflare' }
+36 silly get cb [ 404,
+36 silly get   { date: 'Mon, 17 Aug 2020 07:16:58 GMT',
+36 silly get     'content-type': 'application/json',
+36 silly get     'content-length': '21',
+36 silly get     connection: 'keep-alive',
+36 silly get     'set-cookie': [ '__cfduid=d3f53a4d027e68312ca5023e1f2634b4e1597648617; expires=Wed, 16-Sep-20 07:16:57 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+36 silly get     'cf-ray': '5c419cd3cb38e9a7-CGP',
+36 silly get     vary: 'Accept-Encoding',
+36 silly get     'cf-cache-status': 'EXPIRED',
+36 silly get     'cf-request-id': '049ce0585e0000e9a73432d200000001',
+36 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+36 silly get     server: 'cloudflare' } ]
+37 verbose stack Error: Not found : express-lileupload
+37 verbose stack     at makeError (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+37 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+37 verbose stack     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+37 verbose stack     at Request.self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+37 verbose stack     at emitTwo (events.js:87:13)
+37 verbose stack     at Request.emit (events.js:172:7)
+37 verbose stack     at Request.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1044:10)
+37 verbose stack     at emitOne (events.js:77:13)
+37 verbose stack     at Request.emit (events.js:169:7)
+37 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:965:12)
+38 verbose statusCode 404
+39 verbose pkgid express-lileupload
+40 verbose cwd G:\AIUB\11th-SEMISTER\ADVANCED PROGRAMMING IN WEB TECHNOLOGY [A]\Work\Node-MVC-project-Mid
+41 error Windows_NT 10.0.18362
+42 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "express-lileupload" "--save"
+43 error node v4.8.4
+44 error npm  v2.15.11
+45 error code E404
+46 error 404 Not found : express-lileupload
+46 error 404
+46 error 404 'express-lileupload' is not in the npm registry.
+46 error 404 You should bug the author to publish it (or use the name yourself!)
+46 error 404
+46 error 404 Note that you can also install from a
+46 error 404 tarball, folder, http url, or git url.
+47 verbose exit [ 1, true ]

@@ -90,4 +90,54 @@ router.post('/contact', function(req, res) {
         }
     });
 });
+router.get('/update/:id', function(req, res){
+
+    userModel.get(req.params.id, function(result){
+        res.render('student/update', {user: result});
+    });
+
+});
+
+router.post('/update/:id', function(req, res){
+
+  var user = {
+
+    id               :req.params.id,
+    username         :req.body.username,
+    password         :req.body.password,
+    email            :req.body.email,
+    type             :req.body.type,
+
+
+    }
+
+
+userModel.update(user, function(status){
+    if(status){
+        res.redirect('/student');
+    }else{
+        res.redirect('/user/Profile/'+req.params.id);
+    }
+});
+});
+
+
+router.get('/delete/:id', function(req, res) {
+
+    userModel.get(req.params.id, function(result) {
+        res.render('student/delete', { user: result });
+    });
+
+});
+
+router.post('/delete/:id', function(req, res) {
+
+    userModel.delete(req.body.id, function(status) {
+        if (status) {
+            res.redirect('/');
+        } else {
+            res.redirect('/student');
+        }
+    });
+});
 module.exports = router;

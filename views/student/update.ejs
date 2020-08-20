@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title></title>
+</head>
+
+<body>
+    <h1>update</h1>
+    <form method="post">
+        <fieldset>
+            <legend>Edit user</legend>
+            <table class="center">
+                    <tr>
+                    <td>User ID </td>
+                    <td>
+                       <input type="text" value="<%= user.id %>" name="id" id="id" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>User name </td>
+                    <td>
+                       <input type="text" value="<%= user.username %>" name="username" id="username" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>User password </td>
+                     <td>
+                       <input type="password" value="<%= user.password %>" name="password" id="password"  >
+                    </td>
+                </tr>
+                <tr>
+                    <td>User Email </td>
+                     <td>
+                       <input type="text" value="<%= user.email %>" name="email" id="email" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>user Type </td>
+                     <td>
+                       <input type="text" value="<%= user.type %>" name="type" id="type" >
+                    </td>
+                </tr>
+
+                <td><button type="submit" value="Update">Update</button></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

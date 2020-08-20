@@ -76,25 +76,19 @@ router.post('/update/:id', function(req, res){
     email            :req.body.email,
     type             :req.body.type,
 
-        
+
     }
 
-//     userModel.update(user, function(status){
-//         if(status){
-//             res.redirect('/user/view_users');
-//         }else{
-//             res.redirect('/user/editProfile/'+req.params.id);
-//         }
-//     });
-// });
-userModel.update(user, function(status){
-    if(status){
-        res.redirect('/student');
-    }else{
-        res.redirect('/user/editProfile/'+req.params.id);
-    }
+    userModel.update(user, function(status){
+        if(status){
+            res.redirect('/user/view_users');
+        }else{
+            res.redirect('/user/editProfile/'+req.params.id);
+        }
+    });
 });
-});
+
+
 
 router.get('/delete/:id', function(req, res) {
 
@@ -114,6 +108,7 @@ router.post('/delete/:id', function(req, res) {
         }
     });
 });
+
 
 
 

@@ -10,9 +10,10 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
 
 	var user = {
+		id: req.body.id,
 		username: req.body.username,
 		password: req.body.password,
-		
+
 	};
 
 	userModel.validate(user, function(status){
@@ -20,10 +21,11 @@ router.post('/', function(req, res){
 			userModel.getUserByUsername(req.body.username,function(results)
 			{
 				req.session.username = user.username;
+				req.session.id = user.id;
 
 				if (results[0].type=="admin")
 				{
-					
+
 					res.redirect('/home');
 				}
 				else if (results[0].type=="student")
@@ -35,7 +37,7 @@ router.post('/', function(req, res){
 				else if (results[0].type=="tutor")
 				{
 						res.redirect('/tutor');
-					
+
 
 				}
 				else{
