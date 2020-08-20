@@ -66,7 +66,7 @@ router.get('/update/:id', function(req, res){
 
 });
 
-router.post('/update/:id', function(req, res){
+router.post('/update/:username', function(req, res){
 
   var user = {
 
@@ -76,7 +76,7 @@ router.post('/update/:id', function(req, res){
     email            :req.body.email,
     type             :req.body.type,
 
-        
+
     }
 
     userModel.update(user, function(status){

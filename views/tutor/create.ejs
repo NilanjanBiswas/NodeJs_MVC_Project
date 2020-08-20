@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List page</title>
+	<link rel="stylesheet" type="text/css" href="abc/style.css">
+
+</head>
+<body>
+	<a href="/tutor">Back</a>|
+	<a href="/logout">Logout</a>
+
+
+
+
+	<h3>Apply for Paid Tutor</h3>
+
+	<form method="post">
+		<table>
+			<tr>
+			<td>User ID </td>
+			<td>
+				 <input type="text" value="<%= user.id%>" name="id" id="id" readonly >
+			</td>
+	</tr>
+	<tr>
+			<td>User name </td>
+			<td>
+				 <input type="text" value="<%= user.username%>" name="name" id="name" readonly >
+			</td>
+
+			<tr>
+				<td>Subject</td>
+				<td><input type="text" name="subject" ></td>
+			</tr>
+			<tr>
+				<td>Active status</td>
+				<td><input type="text" value="pending" name="activestatus" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Apply"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
