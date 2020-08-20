@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<a href="/home">Back</a>|
+	<a href="/student">Back</a>|
 	<a href="/logout">Logout</a>
 
 
@@ -30,7 +30,7 @@
       <td><%= userList[i].email %></td>
 			<td><%= userList[i].type %></td>
 			<td><a href="/student/update/<%= userList[i].id %>">EDIT</a> | <a href="/student/delete/<%= userList[i].id %>"> DELETE </a></td>
-		
+
 		</tr>
 		<% } %>
 	</table>
