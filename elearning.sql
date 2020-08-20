@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2020 at 12:30 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- Generation Time: Aug 20, 2020 at 09:56 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,46 @@ SET time_zone = "+00:00";
 --
 -- Database: `elearning`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `username` varchar(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `article` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`username`, `name`, `article`) VALUES
+('tutor', 'Nur Mohammad', 'Enter text here...This is my first blog post'),
+('tutor', 'Nur Mohammad', 'Enter text here...This is my second Article ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `username`, `email`, `contact`) VALUES
+(100, 'tutor', 'nur006@gmail.com', 'hi');
 
 -- --------------------------------------------------------
 
@@ -44,8 +85,8 @@ INSERT INTO `login` (`id`, `username`, `password`, `email`, `type`) VALUES
 (3, 'test', 'test', 'test', 'test'),
 (15, 'student', 'student', 'ss', 'student'),
 (16, 'updated', 'q', 'q', 'q'),
-(17, 'tutor', 'tutor', 't@gmail.com', 'tutor'),
-(19, 'dp', 'd', 'd', 'd');
+(19, 'dp', 'd', 'd', 'd'),
+(100, 'tutor', 'tutor', 'nu1@gmail.com', 'tutor');
 
 -- --------------------------------------------------------
 
@@ -107,7 +148,11 @@ CREATE TABLE `tutor` (
 --
 
 INSERT INTO `tutor` (`id`, `name`, `subject`, `activestatus`) VALUES
-(17, 'morshed', 'math', 'pending');
+(17, 'morshed', 'math', 'pending'),
+(100, 'tutor', 'math', 'pending'),
+(100, 'tutor', 'math', 'pending'),
+(100, 'tutor', 'math', 'pending'),
+(100, 'tutor', 'math', 'pending');
 
 -- --------------------------------------------------------
 
@@ -144,6 +189,18 @@ CREATE TABLE `tutorstudentlist` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`article`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `login`
@@ -193,7 +250,7 @@ ALTER TABLE `tutorstudentlist`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `packages`
