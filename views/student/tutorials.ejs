@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+  
+}
+
+/* Header/Blog Title */
+.header {
+  
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+  position: center;
+}
+
+
+
+
+/* Add a card effect for articles */
+.card {
+   background-color: rgba(122, 117, 117, 0.699);
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1366PX) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Tutorials</h2>
+</div>
+<% for(var i=0; i < userList.length; i++){ %>
+
+
+  
+      <h2>	<br><%= userList[i].content %></h2>
+      <h5>	<%= userList[i].publisher %></h5>
+      
+
+      <iframe width="560" height="315" src="<%= userList[i].url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  
+    
+    <% } %>
+ 
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List page</title>
+	<link rel="stylesheet" type="text/css" href="abc/style.css">
+
+</head>
+<body>
+
+	<a href="/home">Back</a>|
+	<a href="/logout">Logout</a>
+
+
+	<h3>Package List List</h3>
+	<table border="1">
+		<tr>
+			<th>Type</th>
+			<th>Amount</th>
+			<th>Course</th>
+  
+			
+
+		</tr>
+
+		<% for(var i=0; i < userList.length; i++){ %>
+		<tr>
+			<td><%= userList[i].type %></td>
+			<td><%= userList[i].ammount %></td>
+			<td><%= userList[i].course %></td>
+     
+			
+		</tr>
+		<% } %>
+	</table>
+
+</body>
+</html>
